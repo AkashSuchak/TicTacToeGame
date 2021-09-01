@@ -28,11 +28,11 @@ namespace TicTacToeGame
         }
 
         //Input taking from user X or O
-        public static char[] UserSymbol()
+        public char[] UserSymbol()
         {
-            char[] userSymbol = new char[2];            
+            char[] symbol = new char[2];            
 
-            //Taking Symbol 'x' or 'y'
+            //Taking Symbol 'x' or 'o'
             while (true)
             {
                 //Display Message
@@ -40,24 +40,35 @@ namespace TicTacToeGame
 
                 //Inut User
                 char userInput = Convert.ToChar(Console.ReadLine());
-
+                
                 //Assigning character to User and Computer as per input
                 if (userInput == 'X')
                 {
-                    userSymbol[0] = 'X';
-                    userSymbol[1] = 'O';
-                    return userSymbol;
+                    symbol[0] = 'X';
+                    symbol[1] = 'O';
+                    return symbol;
                 }
                 else if (userInput == 'O')
                 {
-                    userSymbol[0] = 'O';
-                    userSymbol[1] = 'X';
-                    return userSymbol;
+                    symbol[0] = 'O';
+                    symbol[1] = 'X';
+                    return symbol;
                 }
                 else Console.WriteLine("Wrong Input!!! Try Again");
             }
         }
+        // Displaying Board
+        public void DisplayBoard()
+        {
+            char[] board = InitializeBoard();
 
-       
+            Console.WriteLine("-----------");
+            Console.WriteLine(board[1] + " | " + board[2] + " | " + board[3]);
+            Console.WriteLine("-----------");
+            Console.WriteLine(board[4] + " | " + board[5] + " | " + board[6]);
+            Console.WriteLine("-----------");
+            Console.WriteLine(board[7] + " | " + board[8] + " | " + board[9]);
+            Console.WriteLine("-----------");
+        }        
     }
 }

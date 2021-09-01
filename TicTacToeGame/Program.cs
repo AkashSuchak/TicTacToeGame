@@ -12,6 +12,7 @@ namespace TicTacToeGame
 
             //Object of Board
             Board board = new Board();
+            board.DisplayBoard();
         }
     }
 }
