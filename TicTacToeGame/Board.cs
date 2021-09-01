@@ -10,6 +10,7 @@ namespace TicTacToeGame
         public Board()
         {
             char[] board = InitializeBoard();
+            char[] symbol = UserSymbol();            
         }
 
         //Intializing Board with Empty Value
@@ -25,5 +26,38 @@ namespace TicTacToeGame
             }
             return board;
         }
+
+        //Input taking from user X or O
+        public static char[] UserSymbol()
+        {
+            char[] userSymbol = new char[2];            
+
+            //Taking Symbol 'x' or 'y'
+            while (true)
+            {
+                //Display Message
+                Console.WriteLine("Choose a Letter X or O : ");
+
+                //Inut User
+                char userInput = Convert.ToChar(Console.ReadLine());
+
+                //Assigning character to User and Computer as per input
+                if (userInput == 'X')
+                {
+                    userSymbol[0] = 'X';
+                    userSymbol[1] = 'O';
+                    return userSymbol;
+                }
+                else if (userInput == 'O')
+                {
+                    userSymbol[0] = 'O';
+                    userSymbol[1] = 'X';
+                    return userSymbol;
+                }
+                else Console.WriteLine("Wrong Input!!! Try Again");
+            }
+        }
+
+       
     }
 }
